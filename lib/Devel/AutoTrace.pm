@@ -87,6 +87,6 @@ END { ATLOG 'end' }
 
 =back
 
-=end
+=cut
 
 1;
