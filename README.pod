@@ -55,6 +55,3 @@ Devel::TraceUse is used to build a stack trace that is saved to AUTOTRACE_LOGROO
 
 =back
 
-=end
-
-1;
