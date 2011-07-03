@@ -6,8 +6,8 @@ Devel::AutoTrace - Currently a half baked idea on how to do automatic loging of 
 
   > perl -d:AutoTrace my_script.pl
   > cat /tmp/devel_autotrace.log 
-  [43a3a8bf38dfabe838eeac5a9daa2180:1309665646.17477] ./my_script.pl : start
-  [43a3a8bf38dfabe838eeac5a9daa2180:1309665647.40194] ./my_script.pl : end
+  [43a3a8bf38dfabe838eeac5a9daa2180:1309665646.17477] my_host : ./my_script.pl : start
+  [43a3a8bf38dfabe838eeac5a9daa2180:1309665647.40194] my_host : ./my_script.pl : end
   > cat /tmp/43a3a8bf38dfabe838eeac5a9daa2180.traceuse 
   ... 
 
@@ -30,12 +30,12 @@ Default is 'devel_autotrace.log', set $ENV{AUTOTRACE_LOGFILE} to change.
 
 =head2 AUTOTRACE_UID
 
-Default is to build a md5_hex from $0, time and a random number. 
+Default is to build a md5_hex from hostname, $0, time, and a random number. 
 
 =head1 LOG FORMAT
 
 Current log format is: 
-  [AUTOTRACE_UID:time_hires] $0 : $msg\n
+  [AUTOTRACE_UID:time_hires] hostname : $0 : $msg\n
 
 Currently only 'start' and 'end' are tracked. 
 
