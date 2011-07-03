@@ -11,14 +11,14 @@ require Digest::MD5;
 open(my $log, '>>', $ENV{AUTOTRACE_LOGFILE} || '/tmp/devel_autotrace.log' );
 my $uid = Digest::MD5::md5_hex(hostname,$0,time,rand(1000));
 
-sub ALOG ($) { printf $log qq{[%s:%s] %s : %s\n}, $uid, time, $0, join( ' ',@_) }
+sub ATLOG ($) { printf $log qq{[%s:%s] %s : %s\n}, $uid, time, $0, join( ' ',@_) }
 
 sub import {
    my $class = shift;
-   ALOG 'start';
+   ATLOG 'start';
 }
 
-END { ALOG 'end' }
+END { ATLOG 'end' }
 
 
 1;
