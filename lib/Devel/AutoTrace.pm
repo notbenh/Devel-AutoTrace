@@ -1,3 +1,6 @@
+package DB; 
+sub DB {}   # Everyone else is doing it... 
+
 package Devel::AutoTrace;
 use strict;
 use warnings;
